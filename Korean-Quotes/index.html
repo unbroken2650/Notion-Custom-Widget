@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Korean Quotes</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
+
 <body>
     <div id="bg">
-        <div id="quote">ABC</div>
+        <img id="image" src="./images/backgroundImage_1.jpg" alt="배경이미지입니다.">
+        <div id="quote">
+            <p id="quote_1">한국어 명언 위젯입니다.</p>
+            <p id="quote_2">아래에 바꾸기 버튼을 눌러 명언을 확인하세요.</p>
+        </div>
+        <p id="changeButton" onclick="browseRandom()">바꾸기</p>
     </div>
 </body>
-	</html>
+<script>
+    const IMG_COUNT = 5;
+    function randomInt(max) {
+        let num = Math.floor(Math.random(0, 1) * max);
+        return num;
+    }
+
+    function browseRandomImage() {
+        document.getElementById(
+            "image"
+        ).src = `./images/backgroundImage_${randomInt(IMG_COUNT)}.jpg`;
+    }
+
+    const quotes = [{ quote: "우리는 딱 우리가 생각하는 만큼의 삶을 산다.", author: "기획의 정석, 박신영" }, { quote: "시간이 흐른다고 미래가 되지는 않는다.", author: "Zero to ONE, Blake Masters and Peter Thiel" }, { quote: "행동만이 삶에 힘을 주고 절제만이 삶에 매력을 준다", author: "장 폴 리히터" }, { quote: "교육은 더 높은 수준의 편견을 얻는 방법이다", author: "로렌스 J. 피터" }, { quote: "인내할 수 있는 사람은 그가 바라는 것은 무엇이든지 손에 넣을 수 있다", author: "벤자민 프랭클린" }];
+
+    const QUOTE_COUNT = quotes.length;
+
+    function browseRandomQuote(quotes) {
+        const quoteNumber = randomInt(QUOTE_COUNT);
+        document.getElementById('quote_1').innerHTML = quotes[quoteNumber].quote;
+        document.getElementById('quote_2').innerHTML = quotes[quoteNumber].author;
+    }
+
+    function browseRandom() {
+        browseRandomImage();
+        browseRandomQuote(quotes);
+    }
+
+</script>
+
+</html>
