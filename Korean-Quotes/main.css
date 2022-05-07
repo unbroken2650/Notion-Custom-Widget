@@ -1,27 +1,37 @@
 body {
-    width: 500px;
-    height: 500px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
 }
+
+body iframe:first-child {
+    display: none !important;
+}
+
 #bg {
-    width: 500px;
-    height: 500px;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
+
 #image {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     z-index: -99;
+
+    border-radius: 25px;
 }
 
 #changeButton {
     margin: 0;
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 1%;
+    bottom: 1%;
 
     cursor: pointer;
 
