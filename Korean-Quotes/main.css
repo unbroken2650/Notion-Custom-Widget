@@ -23,6 +23,7 @@ body iframe:first-child {
     height: 100%;
     position: absolute;
     z-index: -99;
+    object-fit: cover;
 
     border-radius: 25px;
 }
