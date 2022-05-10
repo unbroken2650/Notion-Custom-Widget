@@ -13,22 +13,25 @@
 
 <body>
     <div id="bg">
-        <img id="image" src="https://i.ibb.co/tBVLZDs/background-Image-5.jpg" alt="배경이미지입니다.">
+        <img id="image" src="https://i.ibb.co/G0RT85C/background-Image-1.jpg" alt="배경이미지입니다.">
         <div id="quote">
             <p id="quote_1">한국어 명언 위젯입니다.</p>
             <p id="quote_2">5분마다 새로운 명언으로 바뀝니다.</p>
-            <p id="changeButton" onclick="resetQuote()">새로고침</p>
+            <p id="refreshButton" onclick="resetQuote()"><img id="refreshImage"
+                    src="https://i.ibb.co/pRc2cVz/refresh-2-48.png" alt="새로고침"></p>
         </div>
     </div>
-
     <script>
-        const images = ["https://i.ibb.co/tBVLZDs/background-Image-5.jpg",
-            "https://i.ibb.co/NCVpQfm/background-Image-4.jpg",
-            "https://i.ibb.co/JFdmJgD/background-Image-3.jpg",
-            "https://i.ibb.co/QXnwKsp/background-Image-2.jpg",
-            "https://i.ibb.co/FhmPR8Y/background-Image-1.jpg",]
+        const images = ["https://i.ibb.co/X5H2XqM/background-Image-5.jpg",
+            "https://i.ibb.co/M8TtNsq/background-Image-6.jpg",
+            "https://i.ibb.co/s9rT9SW/background-Image-7.jpg",
+            "https://i.ibb.co/G0RT85C/background-Image-1.jpg",
+            "https://i.ibb.co/PChYhMz/background-Image-2.jpg",
+            "https://i.ibb.co/1QvvcvH/background-Image-3.jpg",
+            "https://i.ibb.co/DKwdfnV/background-Image-4.jpg",]
             ;
 
+        ///배경 이미지 preload
         function preload(images) {
             let n = images.length;
             for (let i = 0; i < n; i++) {
@@ -37,6 +40,7 @@
             }
         };
         preload(images);
+
         const IMG_COUNT = images.length;
 
         function randomInt(max) {
@@ -83,7 +87,6 @@
             } else {
                 goRandom();
             }
-
         }
 
         function resetQuote() {
