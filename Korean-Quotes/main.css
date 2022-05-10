@@ -46,10 +46,21 @@ body iframe:first-child {
 
     border-radius: 50%;
 }
+@media screen and (max-width: 250px) {
+    #refreshButton {
+        right: 5%;
+        bottom: 5%;
+    }
+}
 
 #refreshImage {
     width: 35px;
     object-fit: cover;
+}
+@media screen and (max-width: 250px) {
+    #refreshImage {
+        width: 20px;
+    }
 }
 
 #quote {
