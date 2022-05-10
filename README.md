@@ -15,4 +15,4 @@ Stack : HTML / CSS / Javascript
 https://notion-custom-widget.vercel.app/  
 ![image](https://user-images.githubusercontent.com/58286965/167651917-c6600cea-c045-4143-aa0e-f4f6db91c0fa.png)
 3. 끝!  
-![image](https://user-images.githubusercontent.com/58286965/167652098-2bd474eb-fefc-44aa-9e13-a6777e95906a.png)  
+![image](https://user-images.githubusercontent.com/58286965/167654585-10f7f8c0-7350-4fad-9329-d4a7349efbd7.png)
