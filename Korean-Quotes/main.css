@@ -12,10 +12,14 @@ body iframe:first-child {
 #bg {
     width: 100vw;
     height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 35px;
 }
 
 #image {
@@ -25,28 +29,69 @@ body iframe:first-child {
     z-index: -99;
     object-fit: cover;
 
-    border-radius: 25px;
+    border-radius: 35px;
 }
 
-#changeButton {
+#refreshButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     margin: 0;
     position: absolute;
-    right: 1%;
-    bottom: 1%;
+    right: 3%;
+    bottom: 3%;
 
     cursor: pointer;
 
-    background-color: grey;
-    color: white;
-    border-radius: 15px;
+    border-radius: 50%;
+}
+
+#refreshImage {
+    width: 35px;
+    object-fit: cover;
+}
+
+#quote {
+    padding: 2em;
+}
+
+@font-face {
+    font-family: AppleSDGothicNeoB;
+    src: url(./fonts/AppleSDGothicNeoB.eot);
+    src: local(AppleSDGothicNeoB),
+        url(./fonts/AppleSDGothicNeoB.eot?#iefix) format("embedded-opentype"),
+        url(./fonts/AppleSDGothicNeoB.woff2) format("woff2"),
+        url(./fonts/AppleSDGothicNeoB.woff) format("woff"),
+        url(./fonts/AppleSDGothicNeoB.ttf) format("truetype");
+    font-style: normal;
+    font-weight: bold;
+    unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+    font-family: AppleSDGothicNeoH;
+    src: url(./fonts/AppleSDGothicNeoH.eot);
+    src: local(AppleSDGothicNeoH),
+        url(./fonts/AppleSDGothicNeoH.eot?#iefix) format("embedded-opentype"),
+        url(./fonts/AppleSDGothicNeoH.woff2) format("woff2"),
+        url(./fonts/AppleSDGothicNeoH.woff) format("woff"),
+        url(./fonts/AppleSDGothicNeoH.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+    unicode-range: U+0-10FFFF;
 }
 
 #quote_1 {
     font-size: 20px;
     color: white;
+    font-weight: bold;
+    word-break: keep-all;
 }
 
 #quote_2 {
+    font-style: italic;
     font-size: 10px;
     color: white;
+    word-break: keep-all;
 }
