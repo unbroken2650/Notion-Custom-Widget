@@ -88,10 +88,20 @@ body iframe:first-child {
     font-weight: bold;
     word-break: keep-all;
 }
+@media screen and (max-width: 250px) {
+    #quote_1 {
+        font-size: 1em;
+    }
+}
 
 #quote_2 {
     font-style: italic;
     font-size: 10px;
     color: white;
     word-break: keep-all;
+}
+@media screen and (max-width: 250px) {
+    #quote_2 {
+        font-size: 0.5em;
+    }
 }
