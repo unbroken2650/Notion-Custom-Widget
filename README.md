@@ -1,10 +1,10 @@
 # Notion Custom Widget
-Making Custom Widget For Notion
+Notion 커스텀 위젯 만들기!
 
 ## Korean-Quotes (한국어 명언 위젯)  
 ![image](https://user-images.githubusercontent.com/58286965/167652461-5b87c838-a75b-42b9-9268-92b726b095f0.png)  
 
-###### [링크](https://notion-custom-widget.vercel.app/)
+###### 위젯 링크 : https://notion-custom-widget.vercel.app/ + [벨로그](https://velog.io/@unbroken2650/ncw-korean-quotes)
 
 Stack : HTML / CSS / Javascript  
 
