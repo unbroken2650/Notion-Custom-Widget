@@ -22,14 +22,8 @@
         </div>
     </div>
     <script>
-        const images = ["https://i.ibb.co/X5H2XqM/background-Image-5.jpg",
-            "https://i.ibb.co/M8TtNsq/background-Image-6.jpg",
-            "https://i.ibb.co/s9rT9SW/background-Image-7.jpg",
-            "https://i.ibb.co/G0RT85C/background-Image-1.jpg",
-            "https://i.ibb.co/PChYhMz/background-Image-2.jpg",
-            "https://i.ibb.co/1QvvcvH/background-Image-3.jpg",
-            "https://i.ibb.co/DKwdfnV/background-Image-4.jpg",]
-            ;
+        var images = [];
+        fetch('./data/images.json').then(res => res.json()).then(data => { images = data.images });
 
         ///배경 이미지 preload
         function preload(images) {
@@ -54,12 +48,12 @@
             ).src = images[randomInt(IMG_COUNT)];
         }
 
-        const quotes = [{ quote: "우리는 딱 우리가 생각하는 만큼의 삶을 산다.", author: "기획의 정석, 박신영" }, { quote: "시간이 흐른다고 미래가 되지는 않는다.", author: "Zero to ONE, Blake Masters and Peter Thiel" }, { quote: "행동만이 삶에 힘을 주고 절제만이 삶에 매력을 준다", author: "장 폴 리히터" }, { quote: "교육은 더 높은 수준의 편견을 얻는 방법이다", author: "로렌스 J. 피터" }, { quote: "인내할 수 있는 사람은 그가 바라는 것은 무엇이든지 손에 넣을 수 있다", author: "벤자민 프랭클린" }];
+        var quotes = [];
+        fetch('./data/quotes.json').then(res => res.json()).then(data => { quotes = data.quotes });
 
-        const QUOTE_COUNT = quotes.length;
 
         function browseRandomQuote(quotes) {
-            const quoteNumber = randomInt(QUOTE_COUNT);
+            const quoteNumber = randomInt(quotes.length);
             document.getElementById('quote_1').innerHTML = quotes[quoteNumber].quote;
             document.getElementById('quote_2').innerHTML = quotes[quoteNumber].author;
         }
@@ -72,7 +66,7 @@
         }
 
         function goRandom() {
-            goRandom = setInterval(() => {
+            setInterval(() => {
                 browseRandom();
             }, ONE_MINUTE * 5)
         }
