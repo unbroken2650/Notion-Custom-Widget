@@ -1,4 +1,5 @@
 import coordConvert from "./coordConvert";
+import geoData from "../data/lanlon.json";
 
 function gridCheck() {
   let currLocation = {
@@ -7,6 +8,7 @@ function gridCheck() {
     nx: 0,
     ny: 0,
   };
+  let addr = [];
   function getCurrLocation() {
     return new Promise((success, error) => {
       navigator.geolocation.getCurrentPosition(success, error);
@@ -16,7 +18,18 @@ function gridCheck() {
     .then((position) => {
       currLocation.lat = position.coords.latitude;
       currLocation.lon = position.coords.longitude;
-      console.log(coordConvert(currLocation.lat, currLocation.lon));
+      const tmp = coordConvert(currLocation.lat, currLocation.lon);
+      currLocation.nx = tmp[0];
+      currLocation.ny = tmp[1];
+    })
+    .then(() => {
+      geoData.every(function getAddr(e) {
+        if (e.nx === currLocation.nx && e.ny === currLocation.ny) {
+          addr.push(e.add_1, e.add_2);
+          return false;
+        } else return true;
+      });
+      console.log(addr);
     })
     .catch((err) => console.error(err));
 

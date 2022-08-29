@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import browserWeather from "./utils/browseWeather";
+import browseWeather from "./utils/browseWeather";
 import gridCheck from "./utils/gridCheck";
 
 function App() {
