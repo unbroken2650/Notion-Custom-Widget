@@ -4,7 +4,7 @@ const getUltraSrtNcst =
 
 function browseWeather(x, y) {
   const url = `${getUltraSrtNcst}?serviceKey=${process.env.REACT_APP_API_KEY}&numOfRows=10&pageNo=1
-  &dataType=JSON&base_date=20220829&base_time=0600&nx=${x}&ny=${y}
+  &dataType=JSON&base_date=20220831&base_time=0600&nx=${x}&ny=${y}
   `;
   const currWeather = {
     T1H: 0,
