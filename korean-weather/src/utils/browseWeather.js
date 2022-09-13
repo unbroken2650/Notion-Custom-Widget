@@ -1,10 +1,12 @@
+import browseDate from "./browseDate";
 const axios = require("axios");
-const getUltraSrtNcst =
-  "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst";
+const getUltraSrtNcst = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst";
 
 function browseWeather(x, y) {
+  const today = browseDate();
+  console.log(today);
   const url = `${getUltraSrtNcst}?serviceKey=${process.env.REACT_APP_API_KEY}&numOfRows=10&pageNo=1
-  &dataType=JSON&base_date=20220831&base_time=0600&nx=${x}&ny=${y}
+  &dataType=JSON&base_date=${today.fulldate}&base_time=${today.sharpTime}&nx=${x}&ny=${y}
   `;
   const currWeather = {
     T1H: 0,
