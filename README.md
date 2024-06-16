@@ -4,9 +4,19 @@ Notion 커스텀 위젯 만들기!
 ## Korean-Quotes (한국어 명언 위젯)  
 ![image](https://user-images.githubusercontent.com/58286965/167652461-5b87c838-a75b-42b9-9268-92b726b095f0.png)  
 
-###### 위젯 링크 : https://notion-custom-widget.vercel.app/ + [벨로그](https://velog.io/@unbroken2650/ncw-korean-quotes)
+### Update Log
+###### 24.06.16.
+- 파스텔 느낌의 [커스텀 버전](https://github.com/unbroken2650/Notion-Custom-Widget/tree/pastel_custom)이 추가되었습니다.
+- 링크와 README를 업데이트 하였습니다.
+- 자세한 내용은 [여기](https://github.com/unbroken2650/Notion-Custom-Widget/blob/pastel_custom/README.md)
+
+위젯 링크 : https://notion-custom-widget.vercel.app/
+커스텀 버전(파스텔) 링크 : https://korean-quotes-git-pastelcustom-unbroken2650s-projects.vercel.app/
+개발 후기 : [벨로그](https://velog.io/@unbroken2650/ncw-korean-quotes)
 
 Stack : HTML / CSS / Javascript  
+
+---
 
 ### 노션에 임베드 하는 방법 
 1. <code>/embed</code> 작성 후 **Embed** 클릭  
