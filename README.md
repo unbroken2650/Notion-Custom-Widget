@@ -30,6 +30,11 @@ https://notion-custom-widget.vercel.app/
 ### 배경 이미지, 새로고침 버튼, 명언 목록을 변경하는 법
 1. 원하는 이미지를 [이미지 업로드 사이트](https://ko.imgbb.com/)에 업로드한다.
 #### 배경 이미지
-2. 이미지의 링크를
+2. 이미지의 링크를 아래의 목록에 추가한다.
+![alt text](image.png)
 #### 새로고침 버튼
+2. 이미지의 링크를 아래 src 안에 있는 url과 대체한다.
+![alt text](image-2.png)
 #### 명언 목록
+명언을 추가하실 때도 아래 형식과 동일하게 수정하여 입력하시면 됩니다.
+![alt text](image-1.png)
