@@ -23,11 +23,20 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://i.ibb.co/LZ1tWyJ/Image.png" />
     <style>
+      @font-face {
+        font-family: "GmarketSansMedium";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+          format("woff");
+        font-weight: medium;
+        font-style: medium;
+      }
+
       body {
         width: 100vw;
         height: 100vh;
         margin: 0;
         overflow: hidden;
+        font-family: "GmarketSansMedium", sans-serif;
       }
 
       body iframe:first-child {
@@ -92,45 +101,9 @@
         padding: 2em;
       }
 
-      @font-face {
-        font-family: AppleSDGothicNeoB;
-        src: url(./fonts/AppleSDGothicNeoB.eot);
-        src: local(AppleSDGothicNeoB),
-          url(./fonts/AppleSDGothicNeoB.eot?#iefix) format("embedded-opentype"),
-          url(./fonts/AppleSDGothicNeoB.woff2) format("woff2"),
-          url(./fonts/AppleSDGothicNeoB.woff) format("woff"),
-          url(./fonts/AppleSDGothicNeoB.ttf) format("truetype");
-        font-style: normal;
-        font-weight: bold;
-        unicode-range: U+0-10FFFF;
-      }
-
-      @font-face {
-        font-family: AppleSDGothicNeoH;
-        src: url(./fonts/AppleSDGothicNeoH.eot);
-        src: local(AppleSDGothicNeoH),
-          url(./fonts/AppleSDGothicNeoH.eot?#iefix) format("embedded-opentype"),
-          url(./fonts/AppleSDGothicNeoH.woff2) format("woff2"),
-          url(./fonts/AppleSDGothicNeoH.woff) format("woff"),
-          url(./fonts/AppleSDGothicNeoH.ttf) format("truetype");
-        font-style: normal;
-        font-weight: normal;
-        unicode-range: U+0-10FFFF;
-      }
-
+      /* 한글 명언 폰트 사이즈 */
       #quote_1 {
-        font-size: 18px;
-        color: white;
-        font-weight: bold;
-        word-break: keep-all;
-      }
-      @media screen and (max-width: 250px) {
-        #quote_1 {
-          font-size: 1em;
-        }
-      }
-      #quote_en {
-        font-size: 18px;
+        font-size: 12px;
         color: white;
         font-weight: bold;
         word-break: keep-all;
@@ -141,6 +114,20 @@
         }
       }
 
+      /* 영어 명언 폰트 사이즈 */
+      #quote_en {
+        font-size: 12px;
+        color: white;
+        font-weight: bold;
+        word-break: keep-all;
+      }
+      @media screen and (max-width: 250px) {
+        #quote_1 {
+          font-size: 1em;
+        }
+      }
+
+      /* 아래 작은 글씨 폰트 사이즈 */
       #quote_2 {
         font-style: italic;
         font-size: 10px;
