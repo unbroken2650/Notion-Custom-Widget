@@ -12,7 +12,9 @@ Stack : HTML / CSS / Javascript
 1. <code>/embed</code> 작성 후 **Embed** 클릭  
 ![image](https://user-images.githubusercontent.com/58286965/167651640-484b72f3-acd3-4cbe-954e-655213cf22cc.png)
 2. Embed Link에 링크 입력  
-https://notion-custom-widget.vercel.app/  
-![image](https://user-images.githubusercontent.com/58286965/167651917-c6600cea-c045-4143-aa0e-f4f6db91c0fa.png)
-3. 끝!  
+`https://korean-quotes.vercel.app/`
+
+
+![image](https://github.com/unbroken2650/Notion-Custom-Widget/assets/58286965/7ac685a8-0a71-47fc-801a-119b077f1bb5)
+4. 끝!  
 ![image](https://user-images.githubusercontent.com/58286965/167654585-10f7f8c0-7350-4fad-9329-d4a7349efbd7.png)
