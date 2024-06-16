@@ -1,113 +1,340 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Korean Quotes</title>
-    <meta name="keyword" content="Notion, 노션, 한국어 명언 위젯, 노션 커스텀 위젯,unbroken2650">
-    <meta name="description" content="Notion에서 사용할 수 있는 한국어 명언 위젯입니다.">
-    <meta name="author" content="unbroken2650">
+    <meta
+      name="keyword"
+      content="Notion, 노션, 한국어 명언 위젯, 노션 커스텀 위젯,unbroken2650"
+    />
+    <meta
+      name="description"
+      content="Notion에서 사용할 수 있는 한국어 명언 위젯입니다."
+    />
+    <meta name="author" content="unbroken2650" />
 
-    <meta property="og:title" content="Notion 한국어 명언 위젯">
-    <meta property="og:description" content="Notion에서 사용할 수 있는 한국어 명언 위젯입니다.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://i.ibb.co/LZ1tWyJ/Image.png">
-    <link rel="stylesheet" href="main.css">
+    <meta property="og:title" content="Notion 한국어 명언 위젯" />
+    <meta
+      property="og:description"
+      content="Notion에서 사용할 수 있는 한국어 명언 위젯입니다."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://i.ibb.co/LZ1tWyJ/Image.png" />
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+      }
 
-</head>
+      body iframe:first-child {
+        display: none !important;
+      }
 
-<body>
+      #bg {
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 35px;
+      }
+
+      #image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -99;
+        object-fit: cover;
+
+        border-radius: 35px;
+      }
+
+      #refreshButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0;
+        position: absolute;
+        right: 5%;
+        bottom: 5%;
+
+        cursor: pointer;
+
+        border-radius: 50%;
+      }
+      @media screen and (max-width: 250px) {
+        #refreshButton {
+          right: 5%;
+          bottom: 5%;
+        }
+      }
+
+      #refreshImage {
+        width: 35px;
+        object-fit: cover;
+      }
+      @media screen and (max-width: 250px) {
+        #refreshImage {
+          width: 20px;
+        }
+      }
+
+      #quote {
+        padding: 2em;
+      }
+
+      @font-face {
+        font-family: AppleSDGothicNeoB;
+        src: url(./fonts/AppleSDGothicNeoB.eot);
+        src: local(AppleSDGothicNeoB),
+          url(./fonts/AppleSDGothicNeoB.eot?#iefix) format("embedded-opentype"),
+          url(./fonts/AppleSDGothicNeoB.woff2) format("woff2"),
+          url(./fonts/AppleSDGothicNeoB.woff) format("woff"),
+          url(./fonts/AppleSDGothicNeoB.ttf) format("truetype");
+        font-style: normal;
+        font-weight: bold;
+        unicode-range: U+0-10FFFF;
+      }
+
+      @font-face {
+        font-family: AppleSDGothicNeoH;
+        src: url(./fonts/AppleSDGothicNeoH.eot);
+        src: local(AppleSDGothicNeoH),
+          url(./fonts/AppleSDGothicNeoH.eot?#iefix) format("embedded-opentype"),
+          url(./fonts/AppleSDGothicNeoH.woff2) format("woff2"),
+          url(./fonts/AppleSDGothicNeoH.woff) format("woff"),
+          url(./fonts/AppleSDGothicNeoH.ttf) format("truetype");
+        font-style: normal;
+        font-weight: normal;
+        unicode-range: U+0-10FFFF;
+      }
+
+      #quote_1 {
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        word-break: keep-all;
+      }
+      @media screen and (max-width: 250px) {
+        #quote_1 {
+          font-size: 1em;
+        }
+      }
+      #quote_en {
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        word-break: keep-all;
+      }
+      @media screen and (max-width: 250px) {
+        #quote_1 {
+          font-size: 1em;
+        }
+      }
+
+      #quote_2 {
+        font-style: italic;
+        font-size: 10px;
+        color: white;
+        word-break: keep-all;
+      }
+      @media screen and (max-width: 250px) {
+        #quote_2 {
+          font-size: 0.5em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
     <div id="bg">
-        <img id="image" src="https://i.ibb.co/G0RT85C/background-Image-1.jpg" alt="배경이미지입니다.">
-        <div id="quote">
-            <p id="quote_1">한국어 명언 위젯입니다.</p>
-            <p id="quote_2">5분마다 새로운 명언으로 바뀝니다.</p>
-            <p id="refreshButton" onclick="resetQuote()"><img id="refreshImage"
-                    src="https://i.ibb.co/pRc2cVz/refresh-2-48.png" alt="새로고침"></p>
-        </div>
+      <!-- 첫 시작 이미지 변경은 여기서 하세요! -->
+      <img
+        id="image"
+        src="https://i.ibb.co/n668rcp/Kakao-Talk-20240616-213639398.jpg"
+        alt="배경이미지입니다."
+      />
+      <div id="quote">
+        <p id="quote_en"></p>
+        <p id="quote_1">한국어 명언 위젯입니다.</p>
+        <p id="quote_2">5분마다 새로운 명언으로 바뀝니다.</p>
+        <p id="refreshButton" onclick="resetQuote()">
+          <!-- 새로고침 버튼의 위치입니다. -->
+          <img
+            id="refreshImage"
+            src="https://i.ibb.co/kMScC7G/image.png"
+            alt="새로고침"
+          />
+        </p>
+      </div>
     </div>
     <script>
-        var images = [
-            "https://i.ibb.co/X5H2XqM/background-Image-5.jpg",
-            "https://i.ibb.co/M8TtNsq/background-Image-6.jpg",
-            "https://i.ibb.co/s9rT9SW/background-Image-7.jpg",
-            "https://i.ibb.co/G0RT85C/background-Image-1.jpg",
-            "https://i.ibb.co/PChYhMz/background-Image-2.jpg",
-            "https://i.ibb.co/1QvvcvH/background-Image-3.jpg",
-            "https://i.ibb.co/DKwdfnV/background-Image-4.jpg"
-        ]
-        ///배경 이미지 preload
-        function preload(images) {
-            let n = images.length;
-            for (let i = 0; i < n; i++) {
-                let img = new Image();
-                img.src = images[i];
-            }
-        };
-        preload(images);
-
-        const IMG_COUNT = images.length;
-
-        function randomInt(max) {
-            let num = Math.floor(Math.random(0, 1) * max);
-            return num;
+      //   배경 이미지 변경은 여기서 하시면 됩니다!
+      var images = [
+        "https://i.ibb.co/RHkQmC1/Kakao-Talk-20240616-213639398-03.jpg",
+        "https://i.ibb.co/85TN3Cp/Kakao-Talk-20240616-213639398-04.jpg",
+        "https://i.ibb.co/GQtpZLd/Kakao-Talk-20240616-213639398-05.jpg",
+        "https://i.ibb.co/ChXB7BF/Kakao-Talk-20240616-213639398-06.jpg",
+        "https://i.ibb.co/n668rcp/Kakao-Talk-20240616-213639398.jpg",
+        "https://i.ibb.co/pwgWzPF/Kakao-Talk-20240616-213639398-01.jpg",
+        "https://i.ibb.co/3MWYxqr/Kakao-Talk-20240616-213639398-02.jpg",
+      ];
+      ///배경 이미지 preload
+      function preload(images) {
+        let n = images.length;
+        for (let i = 0; i < n; i++) {
+          let img = new Image();
+          img.src = images[i];
         }
+      }
+      preload(images);
 
-        function browseRandomImage() {
-            document.getElementById(
-                "image"
-            ).src = images[randomInt(IMG_COUNT)];
-        }
+      const IMG_COUNT = images.length;
 
-        var quotes = [];
-        fetch('./data/quotes.json').then(res => res.json()).then(data => { quotes = data.quotes });
+      function randomInt(max) {
+        let num = Math.floor(Math.random(0, 1) * max);
+        return num;
+      }
 
+      function browseRandomImage() {
+        document.getElementById("image").src = images[randomInt(IMG_COUNT)];
+      }
+      //   아래와 같이 동일한 형식으로 입력하시면 추가됩니다 :D
+      var quotes = [
+        {
+          quote: "우리는 딱 우리가 생각하는 만큼의 삶을 산다.",
+          author: "<기획의 정석> - 박신영",
+          quote_en: "We live exactly the life we think we do.",
+        },
+        {
+          quote: "행동만이 삶에 힘을 주고 절제만이 삶에 매력을 준다",
+          author: "장 폴 리히터",
+          quote_en:
+            "Action gives life strength and restraint gives life charm.",
+        },
+        {
+          quote: "교육은 더 높은 수준의 편견을 얻는 방법이다",
+          author: "로렌스 J. 피터",
+          quote_en:
+            "Education is a method of acquiring a higher level of prejudice.",
+        },
+        {
+          quote:
+            "인내할 수 있는 사람은 그가 바라는 것은 무엇이든지 손에 넣을 수 있다",
+          author: "벤자민 프랭클린",
+          quote_en: "He that can have patience can have what he will.",
+        },
+        {
+          quote: "행동 없는 말은 이상주의를 훼손한다.",
+          author: "허버트 후버",
+          quote_en: "Words without actions ruin idealism.",
+        },
+        {
+          quote:
+            "품질이 물량보다 더 중요합니다. 한 번의 홈런이 두 번의 2루타보다 나아요.",
+          author: "스티브 잡스",
+          quote_en:
+            "Quality is more important than quantity. One home run is better than two doubles.",
+        },
+        {
+          quote: "나에게 창의성은 안먹고는 살 수 없는 약과 같다.",
+          author: "세실 B. 드밀",
+          quote_en: "Creativity is a drug I cannot live without.",
+        },
+        {
+          quote: "인류는 세상을 다른 시각으로 보는 사람들에게 냉담할 수 있다.",
+          author: "에릭 A. 번스",
+          quote_en:
+            "Mankind is often hostile to those who see the world differently.",
+        },
+        {
+          quote: "성공의 8할은 일단 출석하는 것이다.",
+          author: "우디 알렌",
+          quote_en: "Eighty percent of success is showing up.",
+        },
+        {
+          quote: "목표에 도달했을 때 돌아서지 마라",
+          author: "퍼블릴리어스 사이러스",
+          quote_en: "Do not turn back when you have reached your goal.",
+        },
+        {
+          quote: "일하여 얻으라. 그러면 운명의 바퀴를 붙들어 잡은 것이다",
+          author: "랄프 왈도 에머슨",
+          quote_en:
+            "Earn your success. This way, you have seized the wheel of fate.",
+        },
+        {
+          quote: "기운과 끈기는 모든 것을 이겨낸다",
+          author: "벤자민 프랭클린",
+          quote_en: "Energy and persistence conquer all things.",
+        },
+        {
+          quote:
+            "생명은 생명을 낳는다. 에너지는 에너지를 창출한다. 사람이 부자가 되는 것은 자신을 소모시킴에 따라 일어난다",
+          author: "사라 베른하르트",
+          quote_en:
+            "Life begets life. Energy creates energy. It is by spending oneself that one becomes rich.",
+        },
+        {
+          quote:
+            "성공의 커다란 비결은 결코 지치지 않는 인간으로 인생을 살아나가는 것이다",
+          author: "알버트 슈바이처",
+          quote_en:
+            "The great secret of success is to go through life as a man who never gets tired.",
+        },
+      ];
 
-        function browseRandomQuote(quotes) {
-            const quoteNumber = randomInt(quotes.length);
-            document.getElementById('quote_1').innerHTML = quotes[quoteNumber].quote;
-            document.getElementById('quote_2').innerHTML = quotes[quoteNumber].author;
-        }
+      function browseRandomQuote(quotes) {
+        const quoteNumber = randomInt(quotes.length);
+        document.getElementById("quote_1").innerHTML =
+          quotes[quoteNumber].quote;
+        document.getElementById("quote_en").innerHTML =
+          quotes[quoteNumber].quote_en;
+        document.getElementById("quote_2").innerHTML =
+          quotes[quoteNumber].author;
+      }
 
-        const ONE_MINUTE = 1000 * 60;
+      const ONE_MINUTE = 1000 * 60;
 
-        function browseRandom() {
-            browseRandomImage();
-            browseRandomQuote(quotes);
-        }
+      function browseRandom() {
+        browseRandomImage();
+        browseRandomQuote(quotes);
+      }
 
-        function goRandom() {
-            setInterval(() => {
-                browseRandom();
-            }, ONE_MINUTE * 5)
-        }
+      function goRandom() {
+        setInterval(() => {
+          browseRandom();
+        }, ONE_MINUTE * 5);
+      }
 
-        function initialBrowse(initial) {
-            //안내 멘트 이후 5초 기다리기
-            if (initial) {
-                setTimeout(() => {
-                    browseRandom();
-                    goRandom();
-                }, 5000)
-            } else {
-                goRandom();
-            }
-        }
-
-        function resetQuote() {
-            clearInterval(goRandom);
+      function initialBrowse(initial) {
+        //안내 멘트 이후 5초 기다리기
+        if (initial) {
+          setTimeout(() => {
             browseRandom();
-            initialBrowse(false);
+            goRandom();
+          }, 5000);
+        } else {
+          goRandom();
         }
+      }
 
-        initialBrowse(true);
+      function resetQuote() {
+        clearInterval(goRandom);
+        browseRandom();
+        initialBrowse(false);
+      }
 
-
-
+      initialBrowse(true);
     </script>
-</body>
-
-
+  </body>
 </html>
