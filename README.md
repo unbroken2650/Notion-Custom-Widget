@@ -14,7 +14,8 @@ Notion 커스텀 위젯 만들기!
 ## Korean-Quotes (한국어 명언 위젯)  
 ![alt text](image-4.png)
 
-###### 위젯 링크 : https://notion-custom-widget.vercel.app/ (original) / https://apption.co/embeds/b2fc23e9 (pastel_cusom)
+###### 위젯 링크 : https://korean-quotes-git-pastelcustom-unbroken2650s-projects.vercel.app/ (pastel_cusom)
+###### [원래 버전](https://github.com/unbroken2650/Notion-Custom-Widget/tree/deployed) 링크 : https://notion-custom-widget.vercel.app/
 ###### 개발 후기: [벨로그](https://velog.io/@unbroken2650/ncw-korean-quotes)
 
 Stack : HTML / CSS / Javascript  
